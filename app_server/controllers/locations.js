@@ -64,14 +64,14 @@ module.exports.locationInfo = function(req, res) {
                 closed: true
             }],
             reviews: [{
-                author: 'Simon Holmes',
+                author: 'Elush Shirazpour',
                 rating: 5,
-                timestamp: '16 July 2013',
+                timestamp: '16 July 2016',
                 reviewText: 'What a great place. I can\'t say enough good things about it.'
             }, {
-                author: 'Charlie Chaplin',
+                author: 'David Vigodnier',
                 rating: 3,
-                timestamp: '16 June 2013',
+                timestamp: '24 February 2015',
                 reviewText: 'It was okay. Coffee wasn\'t great, but the wifi was fast.'
             }]
         }
