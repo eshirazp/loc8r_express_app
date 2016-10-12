@@ -105,7 +105,10 @@ module.exports.locationsReadOne = function(req, res) {
   }
 };
 
+/* POST a new location */
+/* /api/locations */
 module.exports.locationsCreate = function(req, res) {
+  console.log(req.body);
   Loc.create({
     name: req.body.name,
     address: req.body.address,
