@@ -7,7 +7,7 @@ var sendJSONresponse = function(res, status, content) {
 };
 
 var theEarth = (function() {
-  var earthRadius = 6371; // km, miles is 3959
+  var earthRadius = 3959; // km is 6371, miles is 3959
 
   var getDistanceFromRads = function(rads) {
     return parseFloat(rads * earthRadius);
@@ -36,7 +36,7 @@ module.exports.locationsListByDistance = function(req, res) {
 
   var geoOptions = {
     spherical: true,
-    maxDistance: theEarth.getRadsFromDistance(maxDistance),
+    maxDistance: theEarth.getDistanceFromRads(maxDistance),
     num: 10
   };
 
@@ -66,7 +66,7 @@ var buildLocationList = function(req, res, results, stats) {
   var locations = [];
   results.forEach(function(doc) {
     locations.push({
-      distance: theEarth.getDistanceFromRads(doc.dis),
+      distance: theEarth.getRadsFromDistance(doc.dis),
       name: doc.obj.name,
       address: doc.obj.address,
       rating: doc.obj.rating,
